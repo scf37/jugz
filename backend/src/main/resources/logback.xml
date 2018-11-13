@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- logback doesn't provide schema or DTD for configuration files, because of fluent syntax that can be used here -->
+<!DOCTYPE configuration>
+<configuration scan="true">
+
+    <property name="common.log.date.format" value="{yyyy-MM-dd'T'HH:mm:ss.SSS'Z',UTC}" />
+    <property name="log.pattern"
+              value="[%d${common.log.date.format}] [%t] [%c{0}] [%marker] [%X{requestId}] [%p]: %m%n" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <encoder>
+            <charset>utf-8</charset>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
