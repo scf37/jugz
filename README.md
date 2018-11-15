@@ -4,6 +4,13 @@ This is interview task for water-related company (they do not deal with buckets 
 
 See project documentation for user requirements.
 
+## Quickstart
+
+`docker-compose up`
+UI will be available at http://localhost:3000
+REST API at http://localhost:8080
+Admin UI at http://localhost:8081
+
 ## Assumptions
 
 1. Will be used by end users (untrained, varied mobile and desktop hardware/OSes)

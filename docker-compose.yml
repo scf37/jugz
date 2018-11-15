@@ -1,0 +1,14 @@
+version: '2'
+services:
+  frontend:
+    image: scf37/jugz-frontend
+    ports:
+    - "3000:3000"
+  backend:
+    image: scf37/jugz-backend
+    environment:
+    - jugz.http.addr=:8080
+    - jugz.http.adminAddr=:8081
+    ports:
+    - "8080:8080"
+    - "8081:8081"
